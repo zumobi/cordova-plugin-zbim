@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="cordova-plugin-zbim"
+      version="1.3">
+
+    <name>ZBiMSDKPlugin</name>
+    <description>Zumobi ZBiM SDK Plugin</description>
+    <license>MIT</license>
+    <keywords>zumobi,zbim</keywords>
+    <repo>https://github.com/zumobi/cordova-plugin-zbim.git</repo>
+
+    <js-module src="www/zbimPlugin.js" name="zbimPlugin">
+        <clobbers target="zbimPlugin" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ZBiMSDKPlugin">
+                <param name="ios-package" value="ZBiMSDKPlugin"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/ZBiMSDKPlugin.h" />
+        <source-file src="src/ios/ZBiMSDKPlugin.m" />
+        <header-file src="src/ios/ZBiM.h" />
+        <source-file src="src/ios/libzbim.a" framework="true" />
+        <resource-file src="src/ios/zbimResources.bundle" />
+        <header-file src="src/ios/fmdb/FMDatabase.h" />
+        <source-file src="src/ios/fmdb/FMDatabase.m" />
+        <header-file src="src/ios/fmdb/FMDatabaseAdditions.h" />
+        <source-file src="src/ios/fmdb/FMDatabaseAdditions.m" />
+        <header-file src="src/ios/fmdb/FMDatabasePool.h" />
+        <source-file src="src/ios/fmdb/FMDatabasePool.m" />
+        <header-file src="src/ios/fmdb/FMDatabaseQueue.h" />
+        <source-file src="src/ios/fmdb/FMDatabaseQueue.m" />
+        <header-file src="src/ios/fmdb/FMDB.h" />
+        <header-file src="src/ios/fmdb/FMResultSet.h" />
+        <source-file src="src/ios/fmdb/FMResultSet.m" />
+        <framework src="libsqlite3.dylib" />
+        <framework src="libz.dylib" />
+        <framework src="src/ios/AWSCore.framework" custom="true" />
+        <framework src="src/ios/AWSSQS.framework" custom="true" />
+        <framework src="src/ios/AWSCognito.framework" custom="true" />
+        <framework src="Accounts.framework" />
+        <framework src="AdSupport.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="AVKit.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="CoreLocation.framework" />
+        <framework src="CoreMedia.framework" />
+        <framework src="EventKit.framework" />
+        <framework src="EventKitUI.framework" />
+        <framework src="Foundation.framework" />
+        <framework src="MessageUI.framework" />
+        <framework src="PassKit.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="Security.framework" />
+        <framework src="Social.framework" />
+        <framework src="StoreKit.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="Twitter.framework" />
+        <framework src="UIKit.framework" />
+    </platform>
+
+</plugin>
